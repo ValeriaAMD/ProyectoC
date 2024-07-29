@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;">Lista de ventas</h3>
+        {{#if ventas.length}}
+            <table class="table text-center" style="color:white; border-color: blueviolet">
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col">Producto</th>
+                        <th scope="col" class="col-4">Cantidad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Id del producto</th>
+                        <th scope="col">Id del alumno</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each ventas}}
+                        <tr>
+                            <td>{{product_descrip}}</td>
+                            <td>{{cantidad}}</td>
+                            <td>{{fecha_venta}}</td>
+                            <td>{{id_producto}}</td>
+                            <td>{{id_alumno}}</td>
+                            <td>{{total}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes hacer una venta</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas registrar una venta en la aplicacion</p>
+                    <a href="./addVenta" class="btn btn-primary">Ir a crear</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

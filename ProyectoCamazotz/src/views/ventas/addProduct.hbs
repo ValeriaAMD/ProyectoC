@@ -1,0 +1,42 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center" style="background-color: rgba(184, 166, 166, 0.308);">
+                <div class="card-header">
+                    <h3 class="text-uppercase" style="color: rgb(165, 162, 162);">CREAR UN NUEVO PRODUCTO</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/addProduct" method="post">
+                    <div class="input-group mt-2">
+                        <label for="name" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ejemplo: Guantes ADX"
+                        style="background-color: rgba(255, 255, 255, 0.308);" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="description" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Descripcion</label>
+                        <input class="form-control" type="text" name="descripcion" id="apellido" placeholder="Ejemplo: Color rojo de 12oz" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="price" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">precio</label>
+                        <input class="form-control" type="text" name="precio" placeholder="$400" id="precio" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="stock" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Disponibles</label>
+                        <input class="form-control" type="number" name="stock" id="stock" placeholder="3"
+                        style="background-color: rgba(255, 255, 255, 0.308);" required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn" style="background-color: blueviolet;">Registrar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

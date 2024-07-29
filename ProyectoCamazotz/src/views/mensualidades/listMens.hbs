@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;">Lista de mensualidades</h3>
+        
+       
+        {{#if mensual.length}}
+            <table class="table text-center" style="color:white; border-color: blueviolet">
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col" class="col-4">ID del alumno</th>
+                        <th scope="col">Fecha de pago</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each mensual}}
+                        <tr>
+                            <td>{{id_alumno}}</td>
+                            <td>{{fecha_pago}}</td>
+                            <td>{{monto}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/editMens/{{id_mensualidad}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/deleteM/{{id_mensualidad}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes registrar una mensualidad</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este botón para que puedas registrar una nueva mensualidad en la aplicación</p>
+                    <a href="./addMens" class="btn btn-primary">Ir a crear</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

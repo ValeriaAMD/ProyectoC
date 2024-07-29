@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;">Lista de productos</h3>
+        {{#if productos}}
+            <table class="table text-center" style="color:white; border-color: blueviolet">
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col">ID</th>
+                        <th scope="col" class="col-4">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">stock</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productos}}
+                        <tr>
+                            <td>{{id_producto}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{precio}}</td>
+                            <td>{{stock}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/editProduct/{{id_producto}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/deleteP/{{id_producto}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                 
+                </tfoot>
+            </table>
+        </div>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes crear un producto</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas registrar a un producto en la aplicacion</p>
+                    <a href="./addProduct" class="btn btn-primary">Ir a crear</a>
+                </div>
+        {{/if}}
+    </div>
+</div>

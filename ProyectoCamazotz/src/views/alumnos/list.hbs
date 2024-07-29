@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;" >Lista de alumnos</h3>
+        {{#if alumnos}}
+            <table class="table text-center" style="color:white; border-color: blueviolet" >
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col" class="col-4">ID</th>
+                        <th scope="col" >Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">email</th>
+                        <th scope="col">telefono</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col"> Acciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each alumnos}}
+                        <tr>
+                            <td>{{id_alumno}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{apellido}}</td>
+                            <td>{{fecha_nacimiento}}</td>
+                            <td>{{email}}</td>
+                            <td>{{telefono}}</td>
+                            <td>{{direccion}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/edit/{{id_alumno}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/delete/{{id_alumno}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                
+            </table>
+        </div>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes crear un alumno</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este boton para que puedas registrar a un alumno en la aplicacion</p>
+                    <a href="./add" class="btn btn-primary">Ir a crear</a>
+                </div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center" style="background-color: rgba(184, 166, 166, 0.308);">
+                <div class="card-header">
+                    <h3 class="text-uppercase" style="color: rgb(165, 162, 162);">Editando una clase</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editAluClas/{{Aluclas.id_alumno_clase}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="alum" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">ID del alumno</label>
+                        <input class="form-control" type="number" value="{{Aluclas.id_alumno}}" name="id_alumno" id="idalumno" placeholder="1"
+                        style="background-color: rgba(255, 255, 255, 0.308);" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="clase" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">ID de la clase </label>
+                        <input class="form-control" type="number" value="{{Aluclas.id_clase}}" name="id_clase" id="idclase" placeholder="2"
+                        style="background-color: rgba(255, 255, 255, 0.308);" required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn" style="background-color: blueviolet;"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

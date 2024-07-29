@@ -1,0 +1,54 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center" style="background-color: rgba(184, 166, 166, 0.308);">
+                <div class="card-header">
+                    <h3 class="text-uppercase" style="color: rgb(165, 162, 162);">Editando un alumno</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{alumno.id_alumno}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="name" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Nombre</label>
+                        <input class="form-control" type="text" value="{{alumno.nombre}}" name="nombre" id="nombre" placeholder="Ejemplo: Luis Angel" 
+                        style="background-color: rgba(255, 255, 255, 0.308);" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="lastname" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Apellido</label>
+                        <input class="form-control" type="text" value="{{alumno.apellido}}" name="apellido" id="apellido" placeholder="Ejemplo: Fernandez" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="age" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">fecha_nac</label>
+                        <input class="form-control" type="text" value="{{alumno.fecha_nacimiento}}" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="2000-01-01" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="email" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">email</label>
+                        <input class="form-control" type="text" value="{{alumno.email}}" name="email" id="email" placeholder="correo@gmail.com"
+                        style="background-color: rgba(255, 255, 255, 0.308);" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="phone" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">telefono</label>
+                        <input class="form-control" type="number" value="{{alumno.telefono}}" name="telefono" id="telefono" placeholder="465 000 00 00"
+                        style="background-color: rgba(255, 255, 255, 0.308);" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="address" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">direccion</label>
+                        <input class="form-control" type="text" value="{{alumno.direccion}}" name="direccion" id="direccion" placeholder="venustiano carranza # Pabellón de Arteaga"
+                        style="background-color: rgba(255, 255, 255, 0.308);" required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn" style="background-color: blueviolet;"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;">Alumno y clase</h3>
+        {{#if alclases.length}}
+            <table class="table text-center" style="color:white; border-color: blueviolet">
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col">ID de la clase</th>
+                        <th scope="col" class="col-4">ID del alumno</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each alclases}}
+                        <tr>
+                            <td>{{id_clase}}</td>
+                            <td>{{id_alumno}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/editAluClas/{{id_alumno_clase}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/deleteAC/{{id_alumno_clase}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes asignar un alumno a una clase</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este botón para que puedas registrar un alumno en una clase en la aplicación</p>
+                    <a href="./addAluClas" class="btn btn-primary">Ir a crear</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

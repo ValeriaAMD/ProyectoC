@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-2" style="color: white;">Lista de clases</h3>
+
+        {{#if clases.length}}
+            <table class="table text-center" style="color:white; border-color: blueviolet">
+                <thead>
+                    <tr class="table-dark" style="color: blueviolet;">
+                        <th scope="col">ID de la clase</th>
+                        <th scope="col" class="col-4">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Fecha y hora de la clase</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each clases}}
+                        <tr>
+                            <td>{{id_clase}}</td>
+                            <td>{{nombre}}</td>
+                            <td>{{descripcion}}</td>
+                            <td>{{fecha_hora}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/editClas/{{id_clase}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pencil"></i></a>
+                                    <a href="/deleteC/{{id_clase}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes crear una clase</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona este botón para que puedas registrar una clase en la aplicación</p>
+                    <a href="./addClas" class="btn btn-primary">Ir a crear</a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

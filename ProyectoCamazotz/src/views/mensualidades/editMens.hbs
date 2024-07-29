@@ -1,0 +1,36 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center" style="background-color: rgba(184, 166, 166, 0.308);">
+                <div class="card-header">
+                    <h3 class="text-uppercase" style="color: rgb(165, 162, 162);">Editando una mensualidad</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editMens/{{mensuali.id_mensualidad}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="alumn" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">ID del Alumno</label>
+                        <input class="form-control" type="text" value="{{mensuali.id_alumno}}" name="id_alumno" id="idalumno" placeholder="3" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="fechapago" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Fecha de pago </label>
+                        <input class="form-control" type="text" value="{{mensuali.fecha_pago}}" name="fecha_pago" id="fechapago" placeholder="2024-05-23" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="cash" class="input-group-text"
+                        style="background-color: rgba(255, 255, 255, 0.308);">Monto </label>
+                        <input class="form-control" type="number" value="{{mensuali.monto}}"  name="monto" id="money" placeholder="$" 
+                        style="background-color: rgba(255, 255, 255, 0.308);"required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn" style="background-color: blueviolet;"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
