@@ -7,6 +7,7 @@ router.get('/addClas', (req, res) => {
     res.render('clases/addClas');
 });
 
+
 router.post('/addClas', async (req, res) => {
     try {
         const { nombre, descripcion, fecha_hora } = req.body;
