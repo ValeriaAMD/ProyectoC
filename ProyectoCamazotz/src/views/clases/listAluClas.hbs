@@ -1,12 +1,17 @@
 <div class="container">
     <div class="row mt-5">
         <h3 class="text-center text-uppercase p-2" style="color: white;">Alumno y clase</h3>
+             <form action="/listAluClas" method="GET" class="mb-4 text-center">
+            <input type="number" name="id_clase" placeholder="Ingrese ID de la clase" class="form-control w-50 d-inline" required>
+            <button type="submit" class="btn btn" style="background-color: blueviolet;">Buscar</button>
+        </form>
         {{#if alclases.length}}
             <table class="table text-center" style="color:white; border-color: blueviolet">
                 <thead>
                     <tr class="table-dark" style="color: blueviolet;">
                         <th scope="col">ID de la clase</th>
                         <th scope="col" class="col-4">ID del alumno</th>
+                        <th scope="col" class="col-4">nombre</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -15,6 +20,7 @@
                         <tr>
                             <td>{{id_clase}}</td>
                             <td>{{id_alumno}}</td>
+                            <td>{{nombre}}</td>
                             <td>
                                 <div class="btn-group">
                                     <a href="/editAluClas/{{id_alumno_clase}}" class="btn btn-warning p-2">
@@ -30,11 +36,11 @@
         {{else}}
             <div class="card text-center mx-auto" style="width: 350px;">
                 <div class="card-header">
-                    <h3>Debes asignar un alumno a una clase</h3>
+                    <h3>La clase que intentas buscar no existe </h3>
                 </div>
                 <div class="card-body">
-                    <p>Presiona este botón para que puedas registrar un alumno en una clase en la aplicación</p>
-                    <a href="./addAluClas" class="btn btn-primary">Ir a crear</a>
+                    <p>Presiona este botón para que puedas registrar una clase nueva en la aplicación</p>
+                    <a href="./addClas" class="btn btn-primary">Ir a crear</a>
                 </div>
             </div>
         {{/if}}

@@ -21,15 +21,24 @@ router.post('/add', async(req, res)=>{
     }
 });
 
-router.get('/list', async(req, res)=>{
-    try{
-        const [result] = await pool.query('SELECT * FROM alumnos');
-        res.render('alumnos/list', {alumnos: result});
-    }
-    catch(err){
-        res.status(500).json({message:err.message});
+router.get('/list', async (req, res) => {
+    try {
+        const { id_alumno } = req.query;
+        let query = 'SELECT * FROM alumnos';
+        let queryParams = [];
+
+        if (id_alumno) {
+            query += ' WHERE id_alumno = ?';
+            queryParams.push(id_alumno);
+        }
+
+        const [alumnos] = await pool.query(query, queryParams);
+        res.render('alumnos/list', { alumnos });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
+
 
 router.get('/edit/:id_alumno', async(req, res)=>{
     try{

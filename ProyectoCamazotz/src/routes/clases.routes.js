@@ -96,14 +96,25 @@ router.post('/addAluClas', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
 router.get('/listAluClas', async (req, res) => {
     try {
-        const [alclases] = await pool.query('SELECT * FROM alumnos_clases');
-        console.log(alclases); //para saber en la consola si la consulta trae la peticion
+        const { id_clase } = req.query; 
+        let query = `
+            SELECT ac.id_alumno, a.nombre, ac.id_clase, c.nombre AS nombre_clase
+            FROM alumnos_clases ac
+            JOIN alumnos a ON ac.id_alumno = a.id_alumno
+            JOIN clases c ON ac.id_clase = c.id_clase
+        `;
+        let queryParams = [];
+
+        if (id_clase) {
+            query += ' WHERE ac.id_clase = ?'; // Filtrar por ID de clase
+            queryParams.push(id_clase);
+        }
+
+        const [alclases] = await pool.query(query, queryParams);
         res.render('clases/listAluClas', { alclases });
-    } 
-    catch (error) {
+    } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
